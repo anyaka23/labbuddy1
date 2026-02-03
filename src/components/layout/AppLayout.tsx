@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { 
   LayoutDashboard, 
@@ -8,9 +8,14 @@ import {
   BookOpen, 
   AlertTriangle,
   Settings,
-  Beaker
+  Beaker,
+  LogOut,
+  LogIn
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
+import { User } from "@supabase/supabase-js";
 
 interface NavItemProps {
   to: string;
@@ -56,10 +61,22 @@ function NavItem({ to, icon, label, isActive }: NavItemProps) {
 
 interface AppLayoutProps {
   children: ReactNode;
+  user?: User | null;
 }
 
-export function AppLayout({ children }: AppLayoutProps) {
+export function AppLayout({ children, user }: AppLayoutProps) {
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+      toast.error(error.message);
+    } else {
+      toast.success("Logged out successfully");
+      navigate("/");
+    }
+  };
 
   const navItems = [
     { to: "/", icon: <LayoutDashboard size={20} />, label: "Dashboard" },
@@ -109,12 +126,40 @@ export function AppLayout({ children }: AppLayoutProps) {
             label="Settings"
             isActive={location.pathname === "/settings"}
           />
+          
+          {user ? (
+            <motion.button
+              onClick={handleLogout}
+              className={cn(
+                "flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 w-full mt-1",
+                "hover:bg-muted group relative text-muted-foreground hover:text-foreground"
+              )}
+              whileHover={{ x: 4 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <LogOut size={20} />
+              <span className="font-medium text-sm">Logout</span>
+            </motion.button>
+          ) : (
+            <NavItem
+              to="/auth"
+              icon={<LogIn size={20} />}
+              label="Login"
+              isActive={location.pathname === "/auth"}
+            />
+          )}
+          
           <div className="mt-4 p-4 rounded-lg glass">
             <div className="flex items-center gap-2 mb-2">
               <div className="w-2 h-2 rounded-full status-online" />
               <span className="text-xs text-muted-foreground">AI Status</span>
             </div>
             <p className="text-sm font-medium text-foreground">Online & Ready</p>
+            {user && (
+              <p className="text-xs text-muted-foreground mt-1 truncate">
+                {user.email}
+              </p>
+            )}
           </div>
         </div>
       </motion.aside>
