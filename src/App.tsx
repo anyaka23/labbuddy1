@@ -9,6 +9,7 @@ import RecognizePage from "./pages/RecognizePage";
 import ExperimentsPage from "./pages/ExperimentsPage";
 import DiagnosisPage from "./pages/DiagnosisPage";
 import SettingsPage from "./pages/SettingsPage";
+import AuthPage from "./pages/AuthPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -21,6 +22,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/auth" element={<AuthPage />} />
           <Route path="/chat" element={<ChatPage />} />
           <Route path="/recognize" element={<RecognizePage />} />
           <Route path="/experiments" element={<ExperimentsPage />} />

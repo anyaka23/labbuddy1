@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { 
   Beaker, 
@@ -7,12 +8,15 @@ import {
   AlertTriangle,
   ArrowRight,
   Sparkles,
-  Zap
+  Zap,
+  LogIn
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { AppLayout } from "@/components/layout/AppLayout";
 import { GlowCard, StatCard } from "@/components/ui/glow-card";
 import { Button } from "@/components/ui/button";
+import { supabase } from "@/integrations/supabase/client";
+import { User } from "@supabase/supabase-js";
 
 const stats = [
   { icon: <BookOpen size={24} />, label: "Available Experiments", value: 48, trend: { value: 12, positive: true }, glowColor: "primary" as const },
@@ -46,8 +50,24 @@ const quickActions = [
 ];
 
 function Index() {
+  const [user, setUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        setUser(session?.user ?? null);
+      }
+    );
+
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
   return (
-    <AppLayout>
+    <AppLayout user={user}>
       <div className="space-y-8">
         {/* Header */}
         <div className="flex items-start justify-between">
@@ -72,7 +92,16 @@ function Index() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
+            className="flex gap-2"
           >
+            {!user && (
+              <Link to="/auth">
+                <Button variant="outline" className="gap-2">
+                  <LogIn size={18} />
+                  Login
+                </Button>
+              </Link>
+            )}
             <Link to="/chat">
               <Button className="bg-gradient-primary hover:opacity-90 text-primary-foreground gap-2 shadow-glow-primary">
                 <Sparkles size={18} />
