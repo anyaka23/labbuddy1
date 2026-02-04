@@ -1,4 +1,4 @@
-<h1>🧪 LAB BUDDY<\h1>
+<h1>🧪 LAB BUDDY</h1>
 
 
 LabBuddy is a modern, web-based platform designed to help students interactively explore and perform laboratory experiments. It provides intuitive UI for experiment selection, real-time guidance, and backend-powered insights — making practical learning easier, clearer, and more reliable.
