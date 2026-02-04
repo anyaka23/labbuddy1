@@ -1,73 +1,144 @@
-# Welcome to your Lovable project
+<h1>🧪 LAB BUDDY<\h1>
 
-## Project info
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+LabBuddy is a modern, web-based platform designed to help students interactively explore and perform laboratory experiments. It provides intuitive UI for experiment selection, real-time guidance, and backend-powered insights — making practical learning easier, clearer, and more reliable.
 
-## How can I edit this code?
+🔧 Technology Stack
 
-There are several ways of editing your application.
+Frontend
 
-**Use Lovable**
+React — UI foundation for components and interactive screens
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+TypeScript — type-safe coding for better reliability
 
-Changes made via Lovable will be committed automatically to this repo.
+Vite — fast frontend bundler & dev server
 
-**Use your preferred IDE**
+Tailwind CSS — utility-first styling
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+shadcn-ui — component library built on top of Tailwind
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+(Based on the repository’s files and config.)
 
-Follow these steps:
+Backend
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Streamlit App — deployed at https://bf4byueekxkcpqse2wdeia.streamlit.app/
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Designed to handle experiment logic, calculations, insights, or additional content your frontend may request
 
-# Step 3: Install the necessary dependencies.
-npm i
+The backend acts as an API-type service for experiments, explanations, or backend-driven content. You can link to it directly or integrate REST/WebSockets as needed.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+📂 Repository Structure
+labbuddy1/
+├── public/                 # Static assets
+├── src/                    # Frontend source
+│   ├── components/         # UI components
+│   ├── pages/              # Page views
+│   ├── styles/             # Tailwind & UI configs
+│   └── App.tsx             # Entry point
+├── supabase/               # Backend config (if using)
+├── .env                    # Environment variables
+├── package.json            # Dependencies & scripts
+├── tailwind.config.ts      # Styling config
+├── tsconfig.json           # TypeScript config
+└── README.md               # This file
+
+🚀 Quick Start
+
+Make sure you have Node.js (v16+) and npm/yarn installed.
+
+Clone the repo
+
+git clone https://github.com/anyaka23/labbuddy1.git
+cd labbuddy1
+
+
+Install dependencies
+
+npm install
+
+
+Create .env
+
+Add any necessary variables (API URLs, keys for Supabase if used, etc.)
+
+Run in Dev Mode
+
 npm run dev
-```
 
-**Edit a file directly in GitHub**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Open in Browser
 
-**Use GitHub Codespaces**
+http://localhost:5173
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+🧠 How It Works
 
-## What technologies are used for this project?
+Experiment Selection
 
-This project is built with:
+Users pick an experiment to view from the UI.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Guidance Screen
 
-## How can I deploy this project?
+Frontend displays procedure, steps, visuals, and explanations.
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Backend Insights (Optional)
 
-## Can I connect a custom domain to my Lovable project?
+Connect to the Streamlit backend for live calculations, tips, or model outputs.
 
-Yes, you can!
+Example backend URL: https://bf4byueekxkcpqse2wdeia.streamlit.app/
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+🗺 User Flows
+⭐ Student
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Browses available experiments
+
+Reads theory + step-by-step procedure
+
+Gets real-time backend insights
+
+🧑‍🏫 Educator
+
+Validates content
+
+Suggests backend logic for deeper guidance
+
+📌 Environment & Deployment
+Environment Variables
+
+Create a .env with:
+
+VITE_API_BASE_URL="https://bf4byueekxkcpqse2wdeia.streamlit.app/"
+
+
+You can also configure Supabase keys, authentication tokens, or backend endpoints here.
+
+Deployment
+
+Frontend can be deployed via:
+
+Vercel
+
+Netlify
+
+Static hosting
+
+Backend (Streamlit) is already deployed; update or extend via Streamlit Cloud if you have access.
+
+🛠 Future Enhancements
+
+✔ Experiment walkthrough timer
+✔ Backend-generated adaptive tips
+✔ Save and export lab notes
+✔ User login & personalised dashboard
+✔ AI-assisted lab guidance models
+
+🤝 Contributing
+
+Contributions are welcome!
+
+Fork the repo
+
+Create a feature branch
+
+Commit changes with clear messages
+
+Open a Pull Request
