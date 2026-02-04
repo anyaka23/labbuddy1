@@ -1,6 +1,6 @@
 <h1>🧪 LAB BUDDY</h1>
 </h2>INTELLIGENCE LAB ASSISTANT SYSTEM</h2>
-AI that guides, diagnoses, and teaches—inside the lab.
+AI that guides, diagnoses, and teaches—inside the lab.<br>
 
 LabBuddy is a modern, web-based platform designed to help students interactively explore and perform laboratory experiments. It provides intuitive UI for experiment selection, real-time guidance, and backend-powered insights — making practical learning easier, clearer, and more reliable.
 
