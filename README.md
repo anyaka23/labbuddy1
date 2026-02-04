@@ -22,20 +22,6 @@ shadcn-ui — component library built on top of Tailwind
 - STREAMLIT APP — deployed at https://bf4byueekxkcpqse2wdeia.streamlit.app/
 - Basic Ohm's law experiment - This Streamlit page acts as an interactive dashboard where users can perform experiments, provide inputs, and view real-time results. It simplifies complex logic into an easy-to-use web interface, making learning and experimentation faster and more intuitive.
 
-<h1>REPOSITORY STRUCTURE</h1>
-labbuddy1/
-├── public/                 # Static assets
-├── src/                    # Frontend source
-│   ├── components/         # UI components
-│   ├── pages/              # Page views
-│   ├── styles/             # Tailwind & UI configs
-│   └── App.tsx             # Entry point
-├── supabase/               # Backend config (if using)
-├── .env                    # Environment variables
-├── package.json            # Dependencies & scripts
-├── tailwind.config.ts      # Styling config
-├── tsconfig.json           # TypeScript config
-└── README.md               # This file
 
 <h1>🚀HOW TO RUN IT ON YOUR LOCAL MACHINE</h1>
 
