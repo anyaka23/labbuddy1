@@ -1,11 +1,10 @@
 <h1>🧪 LAB BUDDY</h1>
-
+</h2>-Intelligence Lab Assistance System -  AI that guides, diagnoses, and teaches—inside the lab. </h2>
 
 LabBuddy is a modern, web-based platform designed to help students interactively explore and perform laboratory experiments. It provides intuitive UI for experiment selection, real-time guidance, and backend-powered insights — making practical learning easier, clearer, and more reliable.
 
-🔧 Technology Stack
-
-Frontend
+<h1>🔧TECH STACK</h1>
+<h2>FRONTEND</h2>
 
 React — UI foundation for components and interactive screens
 
@@ -17,17 +16,12 @@ Tailwind CSS — utility-first styling
 
 shadcn-ui — component library built on top of Tailwind
 
-(Based on the repository’s files and config.)
+<h2>BACKEND</h2>
 
-Backend
+- STREAMLIT APP — deployed at https://bf4byueekxkcpqse2wdeia.streamlit.app/
+- Basic Ohm's law experiment - This Streamlit page acts as an interactive dashboard where users can perform experiments, provide inputs, and view real-time results. It simplifies complex logic into an easy-to-use web interface, making learning and experimentation faster and more intuitive.
 
-Streamlit App — deployed at https://bf4byueekxkcpqse2wdeia.streamlit.app/
-
-Designed to handle experiment logic, calculations, insights, or additional content your frontend may request
-
-The backend acts as an API-type service for experiments, explanations, or backend-driven content. You can link to it directly or integrate REST/WebSockets as needed.
-
-📂 Repository Structure
+<h1>REPOSITORY STRUCTURE</h1>
 labbuddy1/
 ├── public/                 # Static assets
 ├── src/                    # Frontend source
@@ -42,103 +36,91 @@ labbuddy1/
 ├── tsconfig.json           # TypeScript config
 └── README.md               # This file
 
-🚀 Quick Start
+<h1>🚀HOW TO RUN IT ON YOUR LOCAL MACHINE</h1>
 
-Make sure you have Node.js (v16+) and npm/yarn installed.
+- Make sure you have Node.js (v16+) and npm/yarn installed.
 
-Clone the repo
+- Clone the repo
 
 git clone https://github.com/anyaka23/labbuddy1.git
 cd labbuddy1
 
 
-Install dependencies
+- Install dependencies
 
 npm install
-
-
 Create .env
 
 Add any necessary variables (API URLs, keys for Supabase if used, etc.)
 
-Run in Dev Mode
+- Run in Dev Mode
 
 npm run dev
 
 
-Open in Browser
+- Open in Browser
 
 http://localhost:5173
 
-🧠 How It Works
+<h1>🧠HOW IT WORKS?</h1>
 
-Experiment Selection
+-EXPERIMENT SELECTION
 
 Users pick an experiment to view from the UI.
 
-Guidance Screen
+-GUIDANCE SCREEN 
 
 Frontend displays procedure, steps, visuals, and explanations.
 
-Backend Insights (Optional)
+-OHM'S LAW EXPREIMENT 
 
 Connect to the Streamlit backend for live calculations, tips, or model outputs.
+backend URL: https://bf4byueekxkcpqse2wdeia.streamlit.app/
 
-Example backend URL: https://bf4byueekxkcpqse2wdeia.streamlit.app/
+<h1>🗺USER FLOWS</h1>
 
-🗺 User Flows
-⭐ Student
+<h2>⭐STUDENT</h2>
 
-Browses available experiments
+-Browses available experiments
 
-Reads theory + step-by-step procedure
+-Reads theory + step-by-step procedure
 
-Gets real-time backend insights
+-Gets real-time backend insights
 
-🧑‍🏫 Educator
+<h2>🧑‍🏫 EDUCATOR</h2>
 
-Validates content
+-Validates content
 
-Suggests backend logic for deeper guidance
+-Suggests backend logic for deeper guidance
 
-📌 Environment & Deployment
-Environment Variables
+<h1>📌 DEPLOYMENT</h1>
 
-Create a .env with:
+**Frontend can be deployed via:**
 
-VITE_API_BASE_URL="https://bf4byueekxkcpqse2wdeia.streamlit.app/"
+-Vercel
 
+-Netlify
 
-You can also configure Supabase keys, authentication tokens, or backend endpoints here.
-
-Deployment
-
-Frontend can be deployed via:
-
-Vercel
-
-Netlify
-
-Static hosting
+-Static hosting
 
 Backend (Streamlit) is already deployed; update or extend via Streamlit Cloud if you have access.
 
-🛠 Future Enhancements
+<h1>🛠 FUTURE ENHANCEMENTS</h1>
 
 ✔ Experiment walkthrough timer
-✔ Backend-generated adaptive tips
+✔mobile app that is platform independant 
 ✔ Save and export lab notes
 ✔ User login & personalised dashboard
-✔ AI-assisted lab guidance models
+✔ AI-assisted lab guidance models with the feauture of voice-input 
 
-🤝 Contributing
+<h1>🤝CONTRIBUTING</h1>
 
-Contributions are welcome!
+**Contributions are welcome!**
 
-Fork the repo
+1.Fork the repo
 
-Create a feature branch
+2.Create a feature branch
 
-Commit changes with clear messages
+3.Commit changes with clear messages
 
-Open a Pull Request
+4.Open a Pull Request
